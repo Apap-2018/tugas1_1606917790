@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<head th:fragment="title">
+		<title th:text="${title}"></title>
+	</head>
+	
+	<head th:fragment="css">
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/DataTables-1.10.18/css/dataTables.bootstrap4.min.css}">
+		<link rel="stylesheet" th:href="@{/css/styles.css}">
+	</head>
+	
+	<head th:fragment="js">
+		<script th:src="@{/js/jquery.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/DataTables-1.10.18/js/jquery.dataTables.min.js}"></script>
+		<script th:src="@{/DataTables-1.10.18/js/dataTables.bootstrap4.min.js}"></script>
+	</head>
+</head>
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="#">SIPEG</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		<div class="navbar-nav">
+			<a class="nav-item nav-link" href="/">Home</a>
+			<a class="nav-item nav-link" href="/pegawai/tambah">Tambah Pegawai</a>
+			<a class="nav-item nav-link" href="/jabatan/tambah">Tambah Jabatan</a>
+			<a class="nav-item nav-link" href="#">Cari Pegawai</a>
+			<a class="nav-item nav-link" href="/jabatan/viewall">Lihat Semua Jabatan</a>
+		</div>
+	</div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.half-width {
+	margin-left: 0;
+	width: 50%;
+}
+.btn {
+	margin: .5rem;
+}
+/* navbar */
+nav {
+	margin-bottom: 1rem;
+}
+.bg-light {
+	background-color: #3a3e44!important;
+}
+.navbar-brand, .nav-item {
+	color: white!important;
+}
+
+/* home */
+#nip-input {
+	margin-left: 1rem;
+	margin-right: .75rem;
+}

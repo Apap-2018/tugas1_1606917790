@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<object th:include="fragments/fragment :: title" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+<body>
+<nav th:replace="fragments/fragment :: navbar"></nav>
+<div class="container-fluid half-width">
+  <div class="row">
+    <h3 th:text="'Detail Jabatan ' + ${jabatan.nama}"></h3>
+  </div>
+  <div th:object="${jabatan}">
+    <div class="row">
+      <div class="col-sm-6"><p>Nama</p></div>
+      <div class="col-sm-6"><p th:text="*{nama}"></p></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"><p>Deskripsi</p></div>
+      <div class="col-sm-6"><p th:text="*{deskripsi}"></p></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"><p>Gaji Pokok</p></div>
+      <div class="col-sm-6"><p th:text="*{gajiPokok}"></p></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"><p>Jumlah Karyawan</p></div>
+      <div class="col-sm-6"><p th:text="${jumlahKaryawan}"></p></div>
+    </div>
+    <div class="row">
+    	<form th:action="@{/jabatan/ubah}" method="GET">
+    		<input type="hidden" name="idJabatan" th:value="${jabatan.id}">
+      		<button type="submit" class="btn btn-secondary">Ubah</button>
+  		</form>
+  		<form th:action="@{/jabatan/hapus}" th:object="${jabatan}" method="POST">
+  			<input type="hidden" name="id" th:value="*{id}">
+  			<button type="submit" class="btn btn-secondary">Hapus</button>
+  		</form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
